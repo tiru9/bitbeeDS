@@ -3,29 +3,38 @@ import java.util.List;
 
 public class VirtualThreadSwitch {
     public static void main (String args[]) throws InterruptedException {
-        Thread.ofPlatform().start(() ->{
-            System.out.println("Platform Thread :: "+Thread.currentThread());
-        });
-
-        Thread.ofVirtual().start(() ->{
-            System.out.println("Virtual Thread :: "+Thread.currentThread());
-        }).join();
-
-       /* List<Thread> vThreads = new ArrayList<Thread>();
+        List<Thread> vThreads = new ArrayList<Thread>();
         for(int i = 0; i < 10; i++) {
-            vThreads.add(Thread.ofVirtual().unstarted(() -> {
+            vThreads.add(Thread.ofVirtual().start(() -> {
                 System.out.println("Thread :: " + Thread.currentThread());
                 try{
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }));
-       }
+        }
 
-        for (Thread vThread : vThreads) {vThread.start();}
         for (Thread vThread : vThreads) {
             vThread.join();//waiting to complete all virtual threads first before main
         }
-*/    }
+
+        List<Thread> pThreads = new ArrayList<Thread>();
+        for(int i = 0; i < 10; i++) {
+            pThreads.add(new Thread(() -> {
+                try{
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }));
+        }
+        for (Thread pThread : pThreads) {pThread.start();
+        }
+        for (Thread pThread : pThreads) {
+            pThread.join();//waiting to complete all virtual threads first before main
+            System.out.println("Thread :: " + pThread.getName());
+        }
+
+    }
 }
