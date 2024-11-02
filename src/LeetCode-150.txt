@@ -1,6 +1,6 @@
 ### **1. Arrays (15 Problems)**
 1. Two Sum - [LeetCode 1](https://leetcode.com/problems/two-sum/)  
-     - https://youtu.be/1IzuFU8L3jc
+     - https://youtu.be/1IzuFU8L3jc (2pointer or Map)
 2. Best Time to Buy and Sell Stock - [LeetCode 121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
 3. Remove Duplicates from Sorted Array - [LeetCode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  
 4. Product of Array Except Self - [LeetCode 238](https://leetcode.com/problems/product-of-array-except-self/)  
