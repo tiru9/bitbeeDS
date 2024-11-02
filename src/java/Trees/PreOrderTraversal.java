@@ -1,9 +1,11 @@
+import Trees.TreeNode;
+
 public class PreOrderTraversal{
   public void preorderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
-        System.out.print(root.value + " ");  // Process the root
+        System.out.print(root.val + " ");  // Process the root
         preorderTraversal(root.left);  // Traverse left subtree
         preorderTraversal(root.right);  // Traverse right subtree
     }
@@ -15,7 +17,7 @@ public class PreOrderTraversal{
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
 
-        BinaryTree tree = new BinaryTree();
+        PreOrderTraversal tree = new PreOrderTraversal();
         tree.preorderTraversal(root);
     }
 }

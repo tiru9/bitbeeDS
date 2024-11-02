@@ -1,3 +1,5 @@
+import Trees.TreeNode;
+
 public class PostOrderTraversal{
   public void postorderTraversal(TreeNode root) {
         if (root == null) {
@@ -5,7 +7,7 @@ public class PostOrderTraversal{
         }
         postorderTraversal(root.left);  // Traverse left subtree
         postorderTraversal(root.right);  // Traverse right subtree
-        System.out.print(root.value + " ");  // Process the root
+        System.out.print(root.val + " ");  // Process the root
     }
 
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class PostOrderTraversal{
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
 
-        BinaryTree tree = new BinaryTree();
+        PostOrderTraversal tree = new PostOrderTraversal();
         tree.postorderTraversal(root);
     }
 }

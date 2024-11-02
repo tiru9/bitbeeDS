@@ -1,10 +1,12 @@
+import Trees.TreeNode;
+
 public class InOrderTraversal{
  public void inorderTraversal(TreeNode root) {
         if (root == null) {
             return;
         }
         inorderTraversal(root.left);  // Traverse left subtree
-        System.out.print(root.value + " ");  // Process the root
+        System.out.print(root.val + " ");  // Process the root
         inorderTraversal(root.right);  // Traverse right subtree
     }
 
@@ -15,7 +17,7 @@ public class InOrderTraversal{
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
 
-        BinaryTree tree = new BinaryTree();
+        InOrderTraversal tree = new InOrderTraversal();
         tree.inorderTraversal(root);
     }
 }

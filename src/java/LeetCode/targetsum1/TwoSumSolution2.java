@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class TwoSumSolution2 {
     public static int[] twoSum(int[] nums, int target) {
         // Create an array of pairs (element, index)
