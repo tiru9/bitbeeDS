@@ -21,3 +21,4 @@ def two_sum_two_pointer(nums, target):
 nums = [2, 7, 11, 15]
 target = 9
 print(two_sum_two_pointer(nums, target))  # Output: [0, 1]
+
