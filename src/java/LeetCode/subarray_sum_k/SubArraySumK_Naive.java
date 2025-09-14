@@ -1,4 +1,6 @@
-public class SubarraySumK_Naive {
+package LeetCode.subarray_sum_k;
+
+class SubarraySumK_Naive {
     public static int subarraySum(int[] nums, int k) {
         int count = 0;
         for (int start = 0; start < nums.length; start++) {
